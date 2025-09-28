@@ -30,7 +30,7 @@ function Nav({ numberOfTasks }) {
                     >
                         <img
                             className="folders-item-img"
-                            src={hovered === `main-${index}` ? item.active : item.default}
+                            src={pathToImage + (hovered === `main-${index}` ? item.active : item.default)}
                             alt={item.name}
                         />
                         <h3>{item.name}</h3>
@@ -50,7 +50,7 @@ function Nav({ numberOfTasks }) {
                     >
                         <img
                             className="folders-item-img"
-                            src={hovered === `project-0` ? "/plusActive.png" : "/plus.png"}
+                            src={pathToImage + (hovered === `project-0` ? "plusActive.png" : "plus.png")}
                             alt="new project"
                         />
                         <h3>New project</h3>

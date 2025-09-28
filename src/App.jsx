@@ -14,7 +14,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Todo />} />
           <Route path="/projects/new" element={<div>Create a new project</div>} />
-          {/* You can add more routes here */}
         </Routes>
       </main>
     </div>
