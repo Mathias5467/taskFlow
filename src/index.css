@@ -1,0 +1,13 @@
+#root, html, body, .content {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: #111827;
+  color: #ffffffe0;
+  font-family: sans-serif;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 17rem calc(100% - 17rem);
+}
