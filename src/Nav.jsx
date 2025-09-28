@@ -42,7 +42,7 @@ function Nav({ numberOfTasks }) {
             {/* PROJECTS SECTION */}
             <div className="folders-projects">
                 <h2 className="folders-name">PROJECTS</h2>
-                <Link to="/projects/new" >
+                <Link to="/projects/new" className="link-route" >
                     <div
                         className="folders-item"
                         onMouseEnter={() => setHovered(`project-0`)}

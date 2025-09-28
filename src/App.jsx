@@ -5,7 +5,7 @@ import Todo from "./ToDo";
 
 function App() {
   const [numberOfTasks, setNumberOfTasks] = useState([0, 0, 0, 0]);
-
+  const [projects, setProjects] = useState([]);
   return (
     <HashRouter>
       <div className="content">
