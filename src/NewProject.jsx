@@ -60,6 +60,7 @@ function NewProject() {
                     </div>
                 </div>
                 <div className="project-create-preview">
+                    <h2>Preview</h2>
                     <div className="project-preview">
                         <h2 style={{ background: colorScheme }}>{title ? title : "New Project"}</h2>
                         <div className="task-list">
