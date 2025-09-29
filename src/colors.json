@@ -1,0 +1,38 @@
+[
+    {
+        "name": "sky",
+        "hex": "#4FC3F7"
+    },
+    {
+        "name": "green",
+        "hex": "#66BB6A"
+    },
+    {
+        "name": "amber",
+        "hex": "#FFCA28"
+    },
+    {
+        "name": "coral",
+        "hex": "#FF7043"
+    },
+    {
+        "name": "purple",
+        "hex": "#9575CD"
+    },
+    {
+        "name": "teal",
+        "hex": "#26A69A"
+    },
+    {
+        "name": "pink",
+        "hex": "#F06292"
+    },
+    {
+        "name": "indigo",
+        "hex": "#5C6BC0"
+    },
+    {
+        "name": "lime",
+        "hex": "#D4E157"
+    }
+]

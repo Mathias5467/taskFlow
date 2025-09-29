@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Routes, Route, HashRouter } from "react-router-dom";
 import Nav from "./Nav";
 import Todo from "./ToDo";
+import NewProject from "./NewProject";
 
 function App() {
   const [numberOfTasks, setNumberOfTasks] = useState([0, 0, 0, 0]);
@@ -13,7 +14,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Todo />} />
-          <Route path="/projects/new" element={<div>Create a new project</div>} />
+          <Route path="/projects/new" element={<NewProject/>} />
         </Routes>
       </main>
     </div>
