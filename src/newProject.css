@@ -151,3 +151,22 @@
     text-align: center;
     color: white;
 }
+
+
+.create-button {
+    margin-block: 1rem 0rem;
+    justify-self: center;
+    width: 10rem;
+    cursor: pointer;
+    height: 3rem;
+    text-align: center;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    padding: 0.2rem;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #4b5563;
+}
+.create-button > p {
+    margin-block: 0.5rem;
+}

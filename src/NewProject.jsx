@@ -64,7 +64,7 @@ function NewProject() {
                     <div className="project-preview">
                         <h2 style={{ background: colorScheme }}>{title ? title : "New Project"}</h2>
                         <div className="task-list">
-                            {Array.from({ length: 5 }).map((_, index) => (
+                            {Array.from({ length: 3 }).map((_, index) => (
                                 <div
                                     onClick={() => updateDoneTasks(index)}
                                     key={index}
@@ -82,7 +82,7 @@ function NewProject() {
                     </div>
 
                     <div className="create-button">
-
+                        <p>Create</p>
                     </div>
                 </div>
             </div>
