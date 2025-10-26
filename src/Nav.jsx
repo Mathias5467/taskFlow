@@ -1,25 +1,23 @@
 import { useState, useContext, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { BurgerContext } from "./App";
+import { Link } from "react-router-dom";
+import { BurgerContext, CreatedProjectsContext } from "./App";
 import "./nav.css";
 import mainItems from "./main.json";
 
-function Nav({ numberOfTasks, projects}) {
+function Nav({ numberOfTasks }) {
     const [hovered, setHovered] = useState(null);
     const pathToImage = "https://mathias5467.github.io/taskFlow/";
     const { burgerClicked, clickBurgerMenu } = useContext(BurgerContext);
     const [seen, setSeen] = useState("show");
+    const { projects } = useContext(CreatedProjectsContext);
 
-    // Show/hide based on burger
     useEffect(() => {
         setSeen(burgerClicked ? "show" : "hide");
     }, [burgerClicked]);
 
-
-    // Hide nav and close burger when clicking any link
     const handleLinkClick = () => {
         setSeen("hide");
-        if (burgerClicked) clickBurgerMenu(); // close burger icon
+        if (burgerClicked) clickBurgerMenu();
     };
 
     return (
@@ -82,6 +80,15 @@ function Nav({ numberOfTasks, projects}) {
                         <h3>New project</h3>
                     </div>
                 </Link>
+                <div className="new-projects">
+                    {projects.map((item, index) => (
+                        <div key={index} className="folders-item project-name">
+                            <div className="color-dot" style={{ backgroundColor: item.color }}></div>
+                            <h3>{item.title}</h3>
+                        </div>
+                    ))}
+                </div>
+
             </div>
         </nav>
     );

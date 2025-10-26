@@ -75,6 +75,11 @@ nav {
     transition: 0.3s;
 }
 
+.folders-item.project-name {
+    display: grid;
+    grid-template-columns: 1rem calc(100% - 1rem);
+}
+
 .folders-item:hover {
     background: #6b7280;
     color: #111827;
@@ -88,6 +93,9 @@ nav {
 .folders-item>h3 {
     margin: 0;
     font-weight: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .folders-item>p {
@@ -105,13 +113,23 @@ nav {
 .folders-item:hover>p {
     background-color: #111827;
 }
+.color-dot {
+    width: 1rem;
+    border-radius: 50%;
+    height: 1rem;
+}
 
+.new-projects {
+    max-height: 20rem; 
+    overflow-y: scroll;
+}
 
 @media (max-width: 1200px) {
     nav {
         width: 17rem;
         height: 100%;
         z-index: 1;
+        position: fixed;
     }
     nav.hide {
         transform: translateX(-17rem);
