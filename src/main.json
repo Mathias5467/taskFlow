@@ -8,15 +8,5 @@
         "name": "All tasks",
         "default": "./checklist.png",
         "active": "./checklistActive.png"
-    },
-    {
-        "name": "Today",
-        "default": "./calendar.png",
-        "active": "./calendarActive.png"
-    },
-    {
-        "name": "Upcoming",
-        "default": "./time.png",
-        "active": "./timeActive.png"
     }
 ]

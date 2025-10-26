@@ -5,9 +5,64 @@
   background: #111827;
   color: #ffffffe0;
   font-family: sans-serif;
+  overflow-x: hidden;
 }
 
 .content {
   display: grid;
   grid-template-columns: 17rem calc(100% - 17rem);
+  transition: 0.3s;
+
+}
+
+.burger-menu {
+    width: 4rem;
+    height: 3.5rem; 
+    top: 1.5rem;
+    z-index: 2;
+    position: absolute;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.4rem 0.2rem;
+    box-sizing: border-box;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    right: 1.5rem;
+    visibility: hidden;
+    display: none;
+}
+
+.burger-menu > div {
+  width: 90%;
+  height: 0.5rem;
+  background: #69798f;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.burger-menu.active > div:nth-child(1) {
+  transform: translateY(1.05rem) rotate(45deg);
+}
+
+.burger-menu.active > div:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active > div:nth-child(3) {
+  transform: translateY(-0.8rem) rotate(-45deg);
+}
+
+
+@media (max-width: 1200px) {
+  .content {
+    grid-template-columns: 0 100%;
+  }
+  .burger-menu {
+    visibility: visible;
+    display: flex;
+  }
 }

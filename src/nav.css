@@ -1,13 +1,16 @@
 .link-route {
     text-decoration: none;
 }
+
 nav {
+    transition: 0.3s;
     background: #1f2937;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     border-right: 1px solid #2d3847;
 }
+
 .logo-section {
     display: flex;
     place-items: center;
@@ -15,22 +18,27 @@ nav {
     box-sizing: border-box;
     border-bottom: 1px solid #2d3847;
 }
+
 .logo-icon {
     width: 4rem;
 }
+
 .logo-text {
     display: flex;
     flex-direction: column;
 }
-.logo-text > h1 {
+
+.logo-text>h1 {
     font-size: 1.4rem;
 }
-.logo-text > p {
+
+.logo-text>p {
     font-size: 0.8rem;
     color: #ffffff88;
     margin: 0;
 }
-.logo-text > h1 {
+
+.logo-text>h1 {
     margin-block: 0.1rem;
 }
 
@@ -38,7 +46,8 @@ nav {
     display: flex;
     flex-direction: column;
 }
-.folders-list > div {
+
+.folders-list>div {
     display: flex;
     flex-direction: column;
 }
@@ -49,6 +58,7 @@ nav {
     margin: 1rem 1rem;
     font-weight: 100;
 }
+
 .folders-item {
     color: #ffffff;
     display: flex;
@@ -59,24 +69,28 @@ nav {
     box-sizing: border-box;
     width: 90%;
     border-radius: 0.5rem;
-    padding: 0.7rem 1rem; 
+    padding: 0.7rem 1rem;
     align-items: center;
     margin-block: 0.2rem;
     transition: 0.3s;
 }
+
 .folders-item:hover {
     background: #6b7280;
     color: #111827;
 }
+
 .folders-item-img {
     width: 1.2rem;
     aspect-ratio: 1/1;
 }
-.folders-item > h3 {
+
+.folders-item>h3 {
     margin: 0;
     font-weight: 100;
 }
-.folders-item > p {
+
+.folders-item>p {
     box-sizing: border-box;
     background: transparent;
     color: #6b7280;
@@ -87,6 +101,22 @@ nav {
     margin: 0;
     transition: 0.3s;
 }
-.folders-item:hover > p {
+
+.folders-item:hover>p {
     background-color: #111827;
+}
+
+
+@media (max-width: 1200px) {
+    nav {
+        width: 17rem;
+        height: 100%;
+        z-index: 1;
+    }
+    nav.hide {
+        transform: translateX(-17rem);
+    }
+    nav.show {
+        transform: translate(0rem);
+    }
 }

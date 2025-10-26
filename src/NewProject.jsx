@@ -35,9 +35,8 @@ function NewProject() {
     }
     return (
         <div className="project-create">
-            <div className="project-header">
-                <h1 className="project-header-title">Create New Project</h1>
-                <p className="project-header-moto">Let's make something new...</p>
+            <div className="project-create-title">
+                <h1>Let's create something new...</h1>
             </div>
             <div className="project-details">
                 <div className="project-details-main">
@@ -72,7 +71,7 @@ function NewProject() {
                                     className="task"
                                 >
                                     <div
-                                        style={doneTasks.includes(index) ? { border: `3px solid ${colorScheme}`, backgroundColor: colorScheme} : { border: `3px solid ${colorScheme}` }}
+                                        style={doneTasks.includes(index) ? { border: `3px solid ${colorScheme}`, backgroundColor: colorScheme } : { border: `3px solid ${colorScheme}` }}
                                         className="task-circle"
                                     >{doneTasks.includes(index) ? done : ""}</div>
                                     <div className="task-text">Task {index + 1}</div>
