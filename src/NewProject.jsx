@@ -45,75 +45,80 @@ function NewProject() {
                 <div className="project-details-main">
                     <h2>Project Details</h2>
                     <h3>Project Title</h3>
-                    <div className={`message-title ${titleMessage ? "show" : "hide"}`}>
-                        Type some title!
+                    <div class="input-wrapper">
+                        <div className={`message-title ${titleMessage ? "show" : "hide"}`}>
+                            <p>Type some title!</p>
+                        </div>
+                        <input
+                            onChange={(e) => setTitle(e.target.value)}
+                            value={title}
+                            className="input-title"
+                            placeholder="Enter project title..."
+                            type="text"
+                            onFocus={() => { setTitleMessage(false) }}
+                        />
                     </div>
-                    <input
-                        onChange={(e) => setTitle(e.target.value)}
-                        value={title}
-                        className="input-title"
-                        placeholder="Enter project title..."
-                        type="text"
-                        onFocus={() => { setTitleMessage(false) }}
-                    />
+
                     <h3>Description (Optional)</h3>
-                    <div className={`description-title ${descriptionMessage ? "show" : "hide"}`}>
-                        Type some description!
+                    <div class="input-wrapper">
+                        <div className={`description-title ${descriptionMessage ? "show" : "hide"}`}>
+                            <p>Type some description!</p>
+                        </div>
+                        <textarea
+                            onChange={(e) => setDescription(e.target.value)}
+                            value={description}
+                            className="input-description"
+                            placeholder="Add a brief description..."
+                            onFocus={() => setDescriptionMessage(false)}
+                        ></textarea>
                     </div>
-                    <textarea
-                        onChange={(e) => setDescription(e.target.value)}
-                        value={description}
-                        className="input-description"
-                        placeholder="Add a brief description..."
-                        onFocus={() => setDescriptionMessage(false)}
-                    ></textarea>
-                    <h3>Choose Project Color</h3>
-                    <div className="colors">
-                        {colors.map((color, index) => (
+                <h3>Choose Project Color</h3>
+                <div className="colors">
+                    {colors.map((color, index) => (
+                        <div
+                            onClick={() => setColor(color.hex, index)}
+                            style={{ background: color.hex }}
+                            key={index}
+                            className={colorSelected === index ? "color active" : "color"}
+                        ></div>
+                    ))}
+                </div>
+            </div>
+
+            <div className="project-create-preview">
+                <h2>Preview</h2>
+                <div className="project-preview">
+                    <h2 style={{ background: colorScheme }}>{title || "New Project"}</h2>
+                    <div className="task-list">
+                        {Array.from({ length: 3 }).map((_, index) => (
                             <div
-                                onClick={() => setColor(color.hex, index)}
-                                style={{ background: color.hex }}
+                                onClick={() => updateDoneTasks(index)}
                                 key={index}
-                                className={colorSelected === index ? "color active" : "color"}
-                            ></div>
+                                style={{ border: `1px solid ${colorScheme}` }}
+                                className="task"
+                            >
+                                <div
+                                    style={
+                                        doneTasks.includes(index)
+                                            ? { border: `3px solid ${colorScheme}`, backgroundColor: colorScheme }
+                                            : { border: `3px solid ${colorScheme}` }
+                                    }
+                                    className="task-circle"
+                                >
+                                    {doneTasks.includes(index) ? done : ""}
+                                </div>
+                                <div className="task-text">Task {index + 1}</div>
+                            </div>
                         ))}
                     </div>
                 </div>
 
-                <div className="project-create-preview">
-                    <h2>Preview</h2>
-                    <div className="project-preview">
-                        <h2 style={{ background: colorScheme }}>{title || "New Project"}</h2>
-                        <div className="task-list">
-                            {Array.from({ length: 3 }).map((_, index) => (
-                                <div
-                                    onClick={() => updateDoneTasks(index)}
-                                    key={index}
-                                    style={{ border: `1px solid ${colorScheme}` }}
-                                    className="task"
-                                >
-                                    <div
-                                        style={
-                                            doneTasks.includes(index)
-                                                ? { border: `3px solid ${colorScheme}`, backgroundColor: colorScheme }
-                                                : { border: `3px solid ${colorScheme}` }
-                                        }
-                                        className="task-circle"
-                                    >
-                                        {doneTasks.includes(index) ? done : ""}
-                                    </div>
-                                    <div className="task-text">Task {index + 1}</div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className="create-button" onClick={addNewProject}>
-                        <p>Create</p>
-                    </div>
+                <div className="create-button" onClick={addNewProject}>
+                    <p>Create</p>
                 </div>
             </div>
         </div>
+        </div >
     );
 }
 
